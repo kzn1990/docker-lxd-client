@@ -2,7 +2,8 @@ name: Build Docker Image
 
 on:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '40 14 * * *'
+    - timezone: 'Europe/Warsaw'
 
 jobs:
   build:
