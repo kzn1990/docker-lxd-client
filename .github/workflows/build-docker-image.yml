@@ -2,7 +2,7 @@ name: Build Docker Image
 
 on:
   schedule:
-    - cron: '30 11 * * *'
+    - cron: '30 14 * * *'
 
 jobs:
   build:
