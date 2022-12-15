@@ -1,0 +1,33 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Docker
+      uses: docker/setup-docker-action@v1
+      with:
+        version: latest
+    - name: Login to Docker Hub
+      run: |
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - name: Build Docker image
+      run: |
+        docker build \
+          -t lxd-client:latest \
+          .
+    - name: Test Docker image
+      run: |
+        docker run --rm lxd-client:latest lxc --version
+
+    - name: Push Docker image
+      run: |
+        docker tag lxd-client:latest kzn1990/lxd-client:latest
+        docker push kzn1990/lxd-client:latest
