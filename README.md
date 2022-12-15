@@ -1,6 +1,7 @@
 # Docker LXD Client
 This project contains a Dockerfile for building a Docker image that contains the lxc command-line tool. 
 Installing the lxd client in docker with snap is not possible, so you have to compile from source.
+The project is very useful if you need to perform operations on lxd hosts from docker/pipeline
 
 The Dockerfile uses arguments `GOLANG_VERSION`, `UBUNTU_VERSION` and `LXD_VERSION` to customize the versions.
 
