@@ -7,4 +7,3 @@ RUN go install -v -x github.com/lxc/lxd/lxc@lxd-$LXD_VERSION
 
 FROM ubuntu:$UBUNTU_VERSION
 COPY --from=build /go/bin/lxc /usr/local/bin/lxc
-CMD ["lxc", "--version"]
