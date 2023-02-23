@@ -1,3 +1,5 @@
+[![Build Docker Image](https://github.com/kzn1990/docker-lxd-client/actions/workflows/build-docker-image.yml/badge.svg)](https://github.com/kzn1990/docker-lxd-client/actions/workflows/build-docker-image.yml)
+
 # Docker LXD Client
 This project contains a Dockerfile for building a Docker image that contains the lxc command-line tool. 
 Installing the lxd client in docker with snap is not possible, so you have to compile from source.
